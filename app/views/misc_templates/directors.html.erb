@@ -1,0 +1,22 @@
+<h1>List of all directors</h1>
+<hr>
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>DOB</th>
+      <th></th>
+    </tr>
+    <%for director in @table do%>
+      <tr>
+        <th><%= director.id %></th>
+        <th><img src=<%=director.image%> style="width:250px"></th>
+        <th><%= director.name %></th>
+        <th><%= director.dob %></th>
+        <th><a href="/directors/<%= director.id.to_s %>">Show details</a></th>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
