@@ -8,6 +8,7 @@ class DirectorController < ApplicationController
   def individual
     single_director_ID = Director.where({ :id => params.fetch("id")})
     @single_director = single_director_ID.at(0)
+    @their_movies = Movie.where({:director_id => single_director_ID})
     render({ :template => "misc_templates/unique_director"})
   end
 
