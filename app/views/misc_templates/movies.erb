@@ -1,0 +1,24 @@
+<h1>List of all movies</h1>
+<hr>
+<table border="1">
+  <tbody>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Director</th>
+      <TH></TH>
+    </tr>
+    <%for movie in @table do%>
+      <tr>
+        <th><%= movie.id %></th>
+        <th><img src=<%=movie.image%> style="width:250px"></th>
+        <th><%= movie.title %></th>
+        <th><%= movie.year %></th>
+        <th><%= @director.where({:id => movie.director_id}).at(0).name%></th>
+        <th><a href="/movies/<%= movie.id.to_s %>">Show details</a></th>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
