@@ -20,7 +20,7 @@ class DirectorController < ApplicationController
   end
 
   def youngest
-    @youngest_director_dob = Director.where.not({:dob => nil}).minimum(:dob)
+    @youngest_director_dob = Director.where.not({:dob => nil}).maximum(:dob)
     @youngest_director = Director.where({:dob => @youngest_director_dob}).at(0)
     @youngest_director_dob = DateTime.parse(@youngest_director_dob.to_s).strftime("%B %d, %Y")
     render({ :template => "misc_templates/youngest"})

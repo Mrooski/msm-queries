@@ -1,6 +1,6 @@
 <h1>Director #<%=params.fetch("id")%> details</h1>
 
-<a href="/movies"> Go back </a>
+<a href="/directors"> Go back </a>
 <hr>
 
 <dl>
@@ -9,7 +9,7 @@
   <dt>Dob</dt>
   <dd><%= @single_director.dob%></dd>
   <dt>Bio</dt>
-  <dt></dt>
+  <dt><%= @single_director.bio%></dt>
   <dt>Image</dt>
   <dd><img src=<%= @single_director.image%> style="width:250px;"></dd>
   <dt>Created at</dt>
